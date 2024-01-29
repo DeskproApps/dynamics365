@@ -5,6 +5,7 @@ import {
   useDeskproAppEvents,
   useDeskproLatestAppContext,
   useInitialisedDeskproAppClient,
+  useMutationWithClient,
   useQueryWithClient,
 } from "@deskpro/app-sdk";
 import { Button, H1, Stack } from "@deskpro/deskpro-ui";
@@ -36,7 +37,6 @@ import {
   getLeadById,
   getOpportunityById,
 } from "../../api/api";
-import { useQueryMutationWithClient } from "../../hooks/useQueryMutationClient";
 import AppointmentJson from "../../mapping/appointment.json";
 import PhoneCallJson from "../../mapping/call.json";
 import ContactJson from "../../mapping/contact.json";
@@ -148,7 +148,7 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
     }
   );
 
-  const submitMutation = useQueryMutationWithClient<
+  const submitMutation = useMutationWithClient<
     | ICreateCall
     | ICreateLead
     | ICreateAppointment
