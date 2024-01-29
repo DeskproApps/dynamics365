@@ -1,0 +1,81 @@
+{
+  "titleKeyName": "subject",
+  "idKey": "activityid",
+  "externalUrl": "__client_url__main.aspx?pagetype=entitylist&etn=activity",
+  "externalChildUrl": "__client_url__main.aspx?pagetype=entityrecord&etn=activity&id=__activityid__",
+  "internalChildUrl": "/view/single/Activity/",
+  "internalUrl": "/view/list/Activity",
+  "title": "Activity",
+  "create": [
+    {
+      "name": "subject",
+      "label": "Subject",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "prioritycode",
+      "label": "Priority",
+      "type": "dropdown"
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "textarea"
+    },
+    {
+      "name": "scheduledstart",
+      "label": "Scheduled Start",
+      "type": "date"
+    },
+    {
+      "name": "scheduledend",
+      "label": "Scheduled End",
+      "type": "date"
+    }
+  ],
+  "single": [
+    [
+      {
+        "name": "activityid",
+        "label": "Activity Id",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "textarea"
+      }
+    ],
+    [
+      {
+        "name": "scheduledstart",
+        "label": "Scheduled Start",
+        "type": "datetime"
+      }
+    ],
+    [
+      {
+        "name": "scheduledend",
+        "label": "Scheduled End",
+        "type": "datetime"
+      }
+    ]
+  ],
+  "list": [
+    [
+      {
+        "name": "subject",
+        "label": "Subject",
+        "type": "text"
+      },
+      {
+        "name": "scheduledstart",
+        "label": "Scheduled Start",
+        "type": "datetime"
+      }
+    ]
+  ]
+}

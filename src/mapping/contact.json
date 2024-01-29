@@ -1,0 +1,150 @@
+{
+  "titleKeyName": "fullname",
+  "idKey": "contactid",
+  "externalUrl": "__client_url__main.aspx?pagetype=entitylist&etn=contact",
+  "externalChildUrl": "__client_url__main.aspx?pagetype=entityrecord&etn=contact&id=__contactid__",
+  "internalChildUrl": "/view/single/Contact/",
+  "title": "Contact",
+  "create": [
+    {
+      "name": "firstname",
+      "label": "Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "lastname",
+      "label": "Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "emailaddress1",
+      "label": "Email",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "mobilephone",
+      "label": "Phone",
+      "type": "tel"
+    },
+    {
+      "name": "jobtitle",
+      "label": "Job Title",
+      "type": "text"
+    },
+    {
+      "name": "company",
+      "label": "Company",
+      "type": "text"
+    },
+    {
+      "name": "address1_line1",
+      "label": "Address Line",
+      "type": "text"
+    },
+    {
+      "name": "address1_city",
+      "label": "City",
+      "type": "text"
+    },
+    {
+      "name": "address1_stateorprovince",
+      "label": "State/Province",
+      "type": "text"
+    },
+    {
+      "name": "address1_postalcode",
+      "label": "Postal Code",
+      "type": "text"
+    },
+    {
+      "name": "address1_country",
+      "label": "Country",
+      "type": "text"
+    },
+    {
+      "name": "creditlimit",
+      "label": "Credit Limit",
+      "type": "number"
+    },
+    {
+      "name": "creditonhold",
+      "label": "Credit On Hold",
+      "type": "boolean"
+    }
+  ],
+  "single": [
+    [
+      {
+        "name": "contactid",
+        "label": "Contact Id",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "emailaddress1",
+        "label": "Email",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "mobilephone",
+        "label": "Phone",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "address1_composite",
+        "label": "Address",
+        "type": "address"
+      }
+    ],
+    [
+      {
+        "name": "jobtitle",
+        "label": "Job Title",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "company",
+        "label": "Company",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "creditlimit",
+        "label": "Credit Limit",
+        "type": "currency"
+      }
+    ],
+    [
+      {
+        "name": "creditonhold",
+        "label": "Credit On Hold",
+        "type": "tag"
+      }
+    ]
+  ],
+  "list": [
+    [
+      {
+        "name": "emailaddress1",
+        "label": "Email",
+        "type": "text"
+      },
+      {
+        "name": "address1_country",
+        "label": "Country",
+        "type": "text"
+      }
+    ]
+  ]
+}

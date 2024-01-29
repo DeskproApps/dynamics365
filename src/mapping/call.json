@@ -1,0 +1,100 @@
+{
+  "titleKeyName": "subject",
+  "idKey": "phonecallid",
+  "externalUrl": "__client_url__main.aspx?pagetype=entitylist&etn=phonecall",
+  "externalChildUrl": "__client_url__main.aspx?pagetype=entityrecord&etn=phonecall&id=__activityid__",
+  "internalChildUrl": "/view/single/PhoneCall/__activityid__",
+  "internalUrl": "/view/list/PhoneCall",
+  "title": "Phone Call",
+  "create": [
+    {
+      "name": "subject",
+      "label": "Subject",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "prioritycode",
+      "label": "Priority",
+      "type": "dropdown"
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "textarea"
+    },
+    {
+      "name": "scheduleddurationminutes",
+      "label": "Scheduled Duration (minutes)",
+      "type": "number"
+    },
+    {
+      "name": "scheduledend",
+      "label": "Scheduled End",
+      "type": "date"
+    },
+    {
+      "name": "phonenumber",
+      "label": "Phone Number",
+      "type": "tel"
+    }
+  ],
+  "single": [
+    [
+      {
+        "name": "activityid",
+        "label": "Phone Call Id",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "prioritycode",
+        "label": "Priority",
+        "type": "tag"
+      }
+    ],
+    [
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "textarea"
+      }
+    ],
+    [
+      {
+        "name": "scheduleddurationminutes",
+        "label": "Scheduled Duration (minutes)",
+        "type": "number"
+      }
+    ],
+    [
+      {
+        "name": "scheduledend",
+        "label": "Scheduled End",
+        "type": "datetime"
+      }
+    ],
+    [
+      {
+        "name": "phonenumber",
+        "label": "Phone Number",
+        "type": "tel"
+      }
+    ]
+  ],
+  "list": [
+    [
+      {
+        "name": "prioritycode",
+        "label": "Priority",
+        "type": "tag"
+      },
+      {
+        "name": "scheduledstart",
+        "label": "Scheduled Start",
+        "type": "datetime"
+      }
+    ]
+  ]
+}

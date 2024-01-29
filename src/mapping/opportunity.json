@@ -1,0 +1,83 @@
+{
+  "titleKeyName": "name",
+  "idKey": "opportunityid",
+  "externalUrl": "__client_url__main.aspx?pagetype=entitylist&etn=opportunity",
+  "externalChildUrl": "__client_url__main.aspx?pagetype=entityrecord&etn=opportunity&id=__opportunityid__",
+  "internalChildUrl": "/view/single/Opportunity/__opportunityid__",
+  "internalUrl": "/view/list/Opportunity",
+  "title": "Opportunity",
+  "create": [
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "budgetamount",
+      "label": "Budget Amount",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "estimatedvalue",
+      "label": "Estimated Value",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "customerneed",
+      "label": "Customer Need",
+      "type": "text"
+    },
+    {
+      "name": "estimatedclosedate",
+      "label": "Estimated Close Date",
+      "type": "date"
+    }
+  ],
+  "single": [
+    [
+      {
+        "name": "budgetamount",
+        "label": "Budget Amount",
+        "type": "currency"
+      }
+    ],
+    [
+      {
+        "name": "estimatedvalue",
+        "label": "Estimated Value",
+        "type": "currency"
+      }
+    ],
+    [
+      {
+        "name": "customerneed",
+        "label": "Customer Need",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "estimatedclosedate",
+        "label": "Estimated Close Date",
+        "type": "date"
+      }
+    ]
+  ],
+  "list": [
+    [
+      {
+        "name": "estimatedclosedate",
+        "label": "Estimated Close Date",
+        "type": "date"
+      },
+      {
+        "name": "estimatedvalue",
+        "label": "Estimated Value",
+        "type": "number"
+      }
+    ]
+  ]
+}
