@@ -7,7 +7,6 @@ export const EditObject = () => {
     objectName: "Contact";
     objectId: string;
   }>();
-  console.log(objectName, objectId);
   if (!objectName || !objectId)
     return <H1>Object Name and Object Id must be specified</H1>;
 

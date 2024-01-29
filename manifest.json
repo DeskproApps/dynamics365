@@ -15,24 +15,25 @@
   "settings": {
     "client_id": {
       "title": "Client ID",
-      "description": "Example backend only setting",
+      "description": "The Client ID can be obtained by following the setup guide",
       "type": "string",
       "isRequired": true,
       "isBackendOnly": false
     },
     "client_secret": {
       "title": "Client Secret",
-      "description": "Example backend only setting",
+      "description": "The Client Secret can be obtained by following the setup guide",
       "type": "string",
       "isRequired": true,
       "isBackendOnly": true
     },
     "client_url": {
       "title": "Client URL",
-      "description": "Example backend only setting",
+      "description": "The Client URL can be obtained by following the setup guide",
       "type": "string",
       "isRequired": true,
-      "isBackendOnly": false
+      "isBackendOnly": false,
+      "validationPattern": "https?:\\/\\/.+\\/..+"
     },
     "global_access_token": {
       "title": "",
