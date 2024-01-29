@@ -56,7 +56,7 @@
   "proxy": {
     "whitelist": [
       {
-        "url": "https://__client_url__.*",
+        "url": "__client_url__.*",
         "methods": [
           "GET",
           "POST",
