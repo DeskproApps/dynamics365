@@ -4,9 +4,9 @@ import {
   PropertyRow,
   useDeskproAppTheme,
   useDeskproLatestAppContext,
+  Link,
 } from "@deskpro/app-sdk";
 import { ReactElement, useMemo } from "react";
-import { StyledLink } from "../../styles";
 import { IJson } from "../../types/json";
 import { useMapFieldValues } from "../../hooks/mapFieldValues";
 import { AppLogo } from "../AppLogo/AppLogo";
@@ -14,7 +14,7 @@ import { HorizontalDivider } from "../HorizontalDivider/HorizontalDivider";
 import { H1, H2, H3, Icon, P11, P14, P5, Stack } from "@deskpro/deskpro-ui";
 import { deleteRegexGroups, substitutePlaceholders } from "../../utils/utils";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link as RouterLink } from "react-router-dom";
 
 const SpaceBetweenFields = ({
   field: field,
@@ -89,9 +89,9 @@ export const FieldMapping = ({
         >
           <Stack style={{ textAlign: "center", alignItems: "center" }} gap={3}>
             {title && internalUrl && fields.length > 0 ? (
-              <StyledLink title="title" to={internalUrl}>
+              <Link as={RouterLink} title="title" to={internalUrl}>
                 {title} ({fields.length})
-              </StyledLink>
+              </Link>
             ) : (
               title && (
                 <H1>
@@ -135,7 +135,8 @@ export const FieldMapping = ({
               }}
             >
               {internalChildUrl && childTitleAccessor && (
-                <StyledLink
+                <Link
+                  as={RouterLink}
                   to={substitutePlaceholders(internalChildUrl, {
                     ...field,
                     client_url: clientUrl,
@@ -143,7 +144,7 @@ export const FieldMapping = ({
                   replace={true}
                 >
                   {childTitleAccessor(field)}
-                </StyledLink>
+                </Link>
               )}
               {!internalChildUrl && childTitleAccessor && (
                 <H3 style={{ fontSize: "12px" }}>

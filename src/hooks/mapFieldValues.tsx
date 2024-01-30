@@ -2,7 +2,6 @@ import { ReactElement } from "react";
 import { IJson } from "../types/json";
 import { formatDate } from "../utils/dateUtils";
 import { getObjectValue, makeFirstLetterUppercase } from "../utils/utils";
-import { StyledLink } from "../styles";
 import { CustomTag } from "../components/CustomTag/CustomTag";
 
 export const useMapFieldValues = () => {
@@ -64,15 +63,6 @@ export const useMapFieldValues = () => {
 
           case "tag":
             value = <CustomTag title={field[metadataField.name]} />;
-
-            break;
-
-          case "website":
-            value = (
-              <StyledLink to={field[metadataField.name]?.[0].VALUE}>
-                {field[metadataField.name]?.[0].VALUE}
-              </StyledLink>
-            );
 
             break;
 
