@@ -31,6 +31,20 @@ jest.mock("./src/styles.ts", () => ({
 
 jest.mock("@deskpro/app-sdk", () => ({
   ...jest.requireActual("@deskpro/app-sdk"),
+  useMutationWithClient: (queryFn: () => any) => {
+    let data;
+
+    return {
+      mutate: () => {
+        data = queryFn();
+      },
+      isSuccess: false,
+      isLoading: false,
+      isIdle: true,
+      data,
+    };
+  },
+  Link: () => <div>Link</div>,
   useDeskproAppClient: () => ({
     client: {
       setHeight: () => {},
@@ -103,21 +117,4 @@ jest.mock("./src/hooks/hooks.ts", () => ({
   useLinkContact: () => ({
     getLinkedContact: () => ["1"],
   }),
-}));
-
-jest.mock("./src/hooks/useQueryMutationClient.ts", () => ({
-  ...jest.requireActual("./src/hooks/useQueryMutationClient.ts"),
-  useQueryMutationWithClient: (queryFn: () => any) => {
-    let data;
-
-    return {
-      mutate: () => {
-        data = queryFn();
-      },
-      isSuccess: false,
-      isLoading: false,
-      isIdle: true,
-      data,
-    };
-  },
 }));
