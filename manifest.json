@@ -62,13 +62,15 @@
           "POST",
           "PATCH",
           "PUT"
-        ]
+        ],
+        "timeout": 30
       },
       {
         "url": "https://login.microsoftonline.com/organizations/oauth2/v2.0/token",
         "methods": [
           "POST"
-        ]
+        ],
+        "timeout": 30
       }
     ]
   }
