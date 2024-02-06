@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
-import { IJson } from "../types/json";
-import { formatDate } from "../utils/dateUtils";
-import { getObjectValue, makeFirstLetterUppercase } from "../utils/utils";
 import { CustomTag } from "../components/CustomTag/CustomTag";
+import { IJson } from "../types/json";
+import { getCurrentFormattedDateTime } from "../utils/dateUtils";
+import { getObjectValue, makeFirstLetterUppercase } from "../utils/utils";
 
 export const useMapFieldValues = () => {
   const mapFieldValues = (
@@ -16,8 +16,11 @@ export const useMapFieldValues = () => {
 
         switch (metadataField.type) {
           case "date":
+          case "datetime":
             value = field[metadataField.name]
-              ? formatDate(new Date(field[metadataField.name] as string))
+              ? getCurrentFormattedDateTime(
+                  new Date(field[metadataField.name] as string)
+                )
               : "-";
 
             break;

@@ -26,7 +26,7 @@ export const GlobalAuth = () => {
               color: theme.colors.grey80,
             }}
           >
-            The callback URL will be required during the QuickBooks app setup
+            The callback URL will be required during the Dynamics365 app setup
           </P1>
         </>
       )}

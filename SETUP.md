@@ -37,3 +37,5 @@ Log in to your Dynamics 365 environment and Navigate to Settings (the gear icon 
 ## Installation Completion:
 
 Once all fields are prefilled, please click on Sign In, and once you see "Successfully signed in." message, click on Save to complete the installation.
+
+31a78087-eacc-492c-b7df-970f176b44a5

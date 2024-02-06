@@ -135,7 +135,7 @@ export const FieldMappingInput = forwardRef(
                   label={field.label}
                   error={!!errors[field.name]}
                   onChange={(e: Date[]) =>
-                    setValue(field.name, e[0].toISOString().split("T")[0])
+                    setValue(field.name, e[0].toISOString())
                   }
                 />
               );

@@ -3,18 +3,18 @@
   "idKey": "contactid",
   "externalUrl": "__client_url__main.aspx?pagetype=entitylist&etn=contact",
   "externalChildUrl": "__client_url__main.aspx?pagetype=entityrecord&etn=contact&id=__contactid__",
-  "internalChildUrl": "/view/single/Contact/",
+  "internalChildUrl": "/view/single/Contact/__contactid__",
   "title": "Contact",
   "create": [
     {
       "name": "firstname",
-      "label": "Name",
+      "label": "First Name",
       "type": "text",
       "required": true
     },
     {
       "name": "lastname",
-      "label": "Name",
+      "label": "Last Name",
       "type": "text",
       "required": true
     },

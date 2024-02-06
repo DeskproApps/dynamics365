@@ -214,7 +214,6 @@ export const Main = () => {
       <FieldMapping
         fields={contact}
         metadata={contactJson.single}
-        internalChildUrl={contactJson.internalChildUrl}
         externalChildUrl={contactJson.externalChildUrl}
         childTitleAccessor={(e) => e[contactJson.titleKeyName]}
       />

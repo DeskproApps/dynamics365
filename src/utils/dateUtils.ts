@@ -21,29 +21,26 @@ export function formatDate(date: Date) {
   return formattedDate;
 }
 
-export const formatDateSince = (date: Date) => {
-  const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
+export const getCurrentFormattedDateTime = (date: Date) => {
+  const currentDate = date;
 
-  let interval = seconds / 31536000;
+  const currentHour = currentDate.getHours();
 
-  if (interval > 1) {
-    return Math.floor(interval) + " years";
-  }
-  interval = seconds / 2592000;
-  if (interval > 1) {
-    return Math.floor(interval) + " months";
-  }
-  interval = seconds / 86400;
-  if (interval > 1) {
-    return Math.floor(interval) + " days";
-  }
-  interval = seconds / 3600;
-  if (interval > 1) {
-    return Math.floor(interval) + " hours";
-  }
-  interval = seconds / 60;
-  if (interval > 1) {
-    return Math.floor(interval) + " minutes";
-  }
-  return Math.floor(seconds) + " seconds";
+  const currentMinutes = currentDate.getMinutes();
+
+  const formattedHour = currentHour < 10 ? "0" + currentHour : currentHour;
+
+  const formattedMinutes =
+    currentMinutes < 10 ? "0" + currentMinutes : currentMinutes;
+
+  // Format the date and time as a string
+  const formattedDateTime =
+    currentDate.toLocaleDateString() +
+    " " +
+    formattedHour +
+    ":" +
+    formattedMinutes;
+
+  // Return the formatted date and time
+  return formattedDateTime;
 };

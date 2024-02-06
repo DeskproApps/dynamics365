@@ -14,12 +14,6 @@
       "required": true
     },
     {
-      "name": "budgetamount_base",
-      "label": "Budget",
-      "type": "number",
-      "required": true
-    },
-    {
       "name": "purchasetimeframe",
       "label": "Purchase Timeframe",
       "type": "dropdown"
@@ -69,13 +63,6 @@
         "name": "leadid",
         "label": "Lead Id",
         "type": "text"
-      }
-    ],
-    [
-      {
-        "name": "budgetamount_base",
-        "label": "Budget",
-        "type": "currency"
       }
     ],
     [
