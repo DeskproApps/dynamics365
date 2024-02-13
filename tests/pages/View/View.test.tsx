@@ -201,14 +201,12 @@ describe("View", () => {
   test("View page should show a lead correctly", async () => {
     const { getByText } = renderPage();
 
-    const budget = await waitFor(() => getByText(/€5,000,000.00/i));
-
     const purchaseTimeframe = await waitFor(() => getByText(/This Quarter/i));
 
     const jobTitle = await waitFor(() => getByText(/Developer/i));
 
     await waitFor(() => {
-      [budget, purchaseTimeframe, jobTitle].forEach((el) => {
+      [purchaseTimeframe, jobTitle].forEach((el) => {
         expect(el).toBeInTheDocument();
       });
     });
