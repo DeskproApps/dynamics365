@@ -52,7 +52,7 @@ specifiers:
   styled-components: ^5.3.11
   ts-jest: ^27.1.3
   typescript: ^4.4.4
-  vite: ^2.7.2
+  vite: ^2.9.17
   zod: ^3.22.2
 
 dependencies:
@@ -110,7 +110,7 @@ devDependencies:
   slugify: 1.6.6
   ts-jest: 27.1.5_3736aec01aebc57245ec217d2a4030d4
   typescript: 4.9.5
-  vite: 2.9.16
+  vite: 2.9.17
 
 packages:
 
@@ -5601,8 +5601,8 @@ packages:
       convert-source-map: 2.0.0
     dev: true
 
-  /vite/2.9.16:
-    resolution: {integrity: sha512-X+6q8KPyeuBvTQV8AVSnKDvXoBMnTx8zxh54sOwmmuOdxkjMmEJXH2UEchA+vTMps1xw9vL64uwJOWryULg7nA==}
+  /vite/2.9.17:
+    resolution: {integrity: sha512-XxcRzra6d7xrKXH66jZUgb+srThoPu+TLJc06GifUyKq9JmjHkc1Numc8ra0h56rju2jfVWw3B3fs5l3OFMvUw==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
