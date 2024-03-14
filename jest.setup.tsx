@@ -1,6 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import "regenerator-runtime/runtime";
 import "@testing-library/jest-dom/extend-expect";
+import "intersection-observer";
+import ResizeObserver from "resize-observer-polyfill";
+import { useQuery } from "@tanstack/react-query";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { TextDecoder, TextEncoder } from "util";
 import * as React from "react";
 import { mockTheme } from "./tests/__mocks__/themeMock";
@@ -13,6 +18,9 @@ global.TextDecoder = TextDecoder;
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 global.React = React;
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-ignore
+global.ResizeObserver = ResizeObserver;
 
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
