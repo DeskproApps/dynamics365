@@ -1,0 +1,95 @@
+{
+  "titleKeyName": "subject",
+  "idKey": "appointmentid",
+  "externalUrl": "__client_url__main.aspx?pagetype=entitylist&etn=appointment",
+  "externalChildUrl": "__client_url__main.aspx?pagetype=entityrecord&etn=appointment&id=__activityid__",
+  "internalChildUrl": "/view/single/Appointment/__activityid__",
+  "internalUrl": "/view/list/Appointment",
+  "title": "Appointment",
+  "create": [
+    {
+      "name": "subject",
+      "label": "Subject",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "text"
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "textarea"
+    },
+    {
+      "name": "scheduledstart",
+      "label": "Scheduled Start",
+      "type": "date"
+    },
+    {
+      "name": "scheduledend",
+      "label": "Scheduled End",
+      "type": "date"
+    }
+  ],
+  "single": [
+    [
+      {
+        "name": "activityid",
+        "label": "Appointment Id",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "prioritycode",
+        "label": "Priority",
+        "type": "tag"
+      }
+    ],
+    [
+      {
+        "name": "location",
+        "label": "Location",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "html"
+      }
+    ],
+    [
+      {
+        "name": "scheduledstart",
+        "label": "Scheduled Start",
+        "type": "datetime"
+      }
+    ],
+    [
+      {
+        "name": "scheduledend",
+        "label": "Scheduled End",
+        "type": "datetime"
+      }
+    ]
+  ],
+  "list": [
+    [
+      {
+        "name": "prioritycode",
+        "label": "Priority",
+        "type": "tag"
+      },
+      {
+        "name": "scheduledstart",
+        "label": "Scheduled Start",
+        "type": "datetime"
+      }
+    ]
+  ]
+}

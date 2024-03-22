@@ -1,0 +1,88 @@
+{
+  "titleKeyName": "subject",
+  "idKey": "taskid",
+  "externalUrl": "__client_url__main.aspx?pagetype=entitylist&etn=task",
+  "externalChildUrl": "__client_url__main.aspx?pagetype=entityrecord&etn=task&id=__activityid__",
+  "internalChildUrl": "/view/single/Task/__activityid__",
+  "internalUrl": "/view/list/Task",
+  "title": "Task",
+  "create": [
+    {
+      "name": "subject",
+      "label": "Subject",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "prioritycode",
+      "label": "Priority",
+      "type": "dropdown"
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "textarea"
+    },
+    {
+      "name": "scheduleddurationminutes",
+      "label": "Scheduled Duration (minutes)",
+      "type": "number"
+    },
+    {
+      "name": "scheduledend",
+      "label": "Scheduled End",
+      "type": "date"
+    }
+  ],
+  "single": [
+    [
+      {
+        "name": "activityid",
+        "label": "Task Id",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "prioritycode",
+        "label": "Priority",
+        "type": "tag"
+      }
+    ],
+    [
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "textarea"
+      }
+    ],
+    [
+      {
+        "name": "scheduleddurationminutes",
+        "label": "Scheduled Duration (minutes)",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "scheduledend",
+        "label": "Scheduled End",
+        "type": "date"
+      }
+    ]
+  ],
+  "list": [
+    [
+      {
+        "name": "prioritycode",
+        "label": "Priority",
+        "type": "tag"
+      },
+      {
+        "name": "scheduledstart",
+        "label": "Scheduled Start",
+        "type": "date"
+      }
+    ]
+  ]
+}
