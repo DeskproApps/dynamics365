@@ -2,16 +2,11 @@
   "name": "@deskpro-apps/dynamics365",
   "title": "Dynamics365",
   "description": " Elevate your customer interactions, marketing and overall business efficiency with Dynamics365.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
-  "targets": [
-    {
-      "target": "user_sidebar",
-      "entrypoint": "index.html"
-    }
-  ],
+  "targets": [{ "target": "user_sidebar", "entrypoint": "index.html" }],
   "settings": {
     "client_id": {
       "title": "Client ID",
@@ -38,9 +33,7 @@
     "global_access_token": {
       "title": "",
       "type": "app_embedded",
-      "options": {
-        "entrypoint": "#/admin/globalauth"
-      },
+      "options": { "entrypoint": "#/admin/globalauth" },
       "isRequired": true,
       "isBackendOnly": true,
       "order": 30
@@ -57,19 +50,12 @@
     "whitelist": [
       {
         "url": "__client_url__.*",
-        "methods": [
-          "GET",
-          "POST",
-          "PATCH",
-          "PUT"
-        ],
+        "methods": ["GET", "POST", "PATCH", "PUT"],
         "timeout": 30
       },
       {
         "url": "https://login.microsoftonline.com/organizations/oauth2/v2.0/token",
-        "methods": [
-          "POST"
-        ],
+        "methods": ["POST"],
         "timeout": 30
       }
     ]
