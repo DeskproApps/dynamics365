@@ -1,0 +1,141 @@
+{
+  "titleKeyName": "subject",
+  "idKey": "leadid",
+  "externalUrl": "__client_url__main.aspx?pagetype=entitylist&etn=lead",
+  "externalChildUrl": "__client_url__main.aspx?pagetype=entityrecord&etn=lead&id=__leadid__",
+  "internalChildUrl": "/view/single/Lead/__leadid__",
+  "internalUrl": "/view/list/Lead",
+  "title": "Lead",
+  "create": [
+    {
+      "name": "subject",
+      "label": "Topic",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "purchasetimeframe",
+      "label": "Purchase Timeframe",
+      "type": "dropdown"
+    },
+    {
+      "name": "leadsourcecode",
+      "label": "Lead Source",
+      "type": "dropdown"
+    },
+    {
+      "name": "firstname",
+      "label": "First Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "lastname",
+      "label": "Last Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "emailaddress1",
+      "label": "Email",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "companyname",
+      "label": "Company",
+      "type": "text"
+    },
+    {
+      "name": "jobtitle",
+      "label": "Job Title",
+      "type": "text"
+    },
+    {
+      "name": "telephone1",
+      "label": "Phone",
+      "type": "tel"
+    }
+  ],
+  "single": [
+    [
+      {
+        "name": "leadid",
+        "label": "Lead Id",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "emailaddress1",
+        "label": "Email",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "purchasetimeframe",
+        "label": "Purchase Timeframe",
+        "type": "dropdown"
+      }
+    ],
+    [
+      {
+        "name": "leadsourcecode",
+        "label": "Lead Source",
+        "type": "dropdown"
+      }
+    ],
+    [
+      {
+        "name": "firstname",
+        "label": "First Name",
+        "type": "text",
+        "required": true
+      }
+    ],
+    [
+      {
+        "name": "lastname",
+        "label": "Last Name",
+        "type": "text",
+        "required": true
+      }
+    ],
+    [
+      {
+        "name": "companyname",
+        "label": "Company",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "jobtitle",
+        "label": "Job Title",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "telephone1",
+        "label": "Phone",
+        "type": "text"
+      }
+    ]
+  ],
+  "list": [
+    [
+      {
+        "name": "budgetamount_base",
+        "label": "Budget",
+        "type": "currency"
+      },
+      {
+        "name": "companyname",
+        "label": "Company",
+        "type": "text"
+      }
+    ]
+  ]
+}

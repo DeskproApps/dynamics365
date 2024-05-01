@@ -1,4 +1,4 @@
-My App
+Dynamics 365
 ======
 
-todo: add a description that will appear alongside your app in Deskpro admin
+Elevate your customer interactions, marketing and overall business efficiency with Dynamics365!
