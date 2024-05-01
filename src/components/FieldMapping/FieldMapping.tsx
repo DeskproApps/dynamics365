@@ -109,7 +109,7 @@ export const FieldMapping = ({
                 }}
                 onClick={() => navigate(createPage)}
               >
-                <Icon icon={faPlus} />
+                <Icon icon={faPlus as any} />
               </div>
             )}
           </Stack>

@@ -19,7 +19,7 @@ export const ErrorFallback = ({
       <Button
         text="Reload"
         onClick={resetErrorBoundary}
-        icon={faRefresh}
+        icon={faRefresh as any}
         intent="secondary"
       />
     </Stack>

@@ -110,7 +110,8 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
     watch,
     reset,
   } = useForm<any>({
-    resolver: zodResolver(schema as ZodTypeAny),
+    // @ts-ignore
+    resolver: zodResolver(schema as any),
   });
 
   const objectByIdQuery = useQueryWithClient<{
