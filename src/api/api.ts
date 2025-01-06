@@ -1,8 +1,6 @@
 import {
   IDeskproClient,
-  ProxyResponse,
   proxyFetch,
-  V2ProxyRequestInit,
 } from "@deskpro/app-sdk";
 import { IContact, ICreateContact } from "../types/contact";
 import { ICreateOpportunity, IOpportunity } from "../types/opportunity";
@@ -71,14 +69,14 @@ export const editContact = async (
   client: IDeskproClient,
   id: string,
   data: ICreateContact
-): Promise<ProxyResponse> => {
+): Promise<Response> => {
   return defaultRequest(client, `contacts(${id})`, "PATCH", data);
 };
 
 export const createContact = async (
   client: IDeskproClient,
   data: ICreateContact
-): Promise<ProxyResponse> => {
+): Promise<Response> => {
   return defaultRequest(client, `contacts`, "POST", data);
 };
 
@@ -152,14 +150,14 @@ export const editLead = async (
   client: IDeskproClient,
   id: string,
   data: ICreateLead
-): Promise<ProxyResponse> => {
+): Promise<Response> => {
   return defaultRequest(client, `leads(${id})`, "PATCH", data);
 };
 
 export const createLead = async (
   client: IDeskproClient,
   data: ICreateLead
-): Promise<ProxyResponse> => {
+): Promise<Response> => {
   return defaultRequest(client, `leads`, "POST", data);
 };
 
@@ -250,14 +248,14 @@ export const editOpportunity = async (
   client: IDeskproClient,
   id: string,
   data: ICreateOpportunity
-): Promise<ProxyResponse> => {
+): Promise<Response> => {
   return defaultRequest(client, `opportunities(${id})`, "PATCH", data);
 };
 
 export const createOpportunity = async (
   client: IDeskproClient,
   data: ICreateOpportunity
-): Promise<ProxyResponse> => {
+): Promise<Response> => {
   return defaultRequest(client, `opportunities`, "POST", data);
 };
 
@@ -346,14 +344,14 @@ export const editTask = async (
   client: IDeskproClient,
   id: string,
   data: ICreateTask
-): Promise<ProxyResponse> => {
+): Promise<Response> => {
   return defaultRequest(client, `tasks(${id})`, "PATCH", data);
 };
 
 export const createTask = async (
   client: IDeskproClient,
   data: ICreateTask
-): Promise<ProxyResponse> => {
+): Promise<Response> => {
   return defaultRequest(client, `tasks`, "POST", data);
 };
 
@@ -387,14 +385,14 @@ export const editCall = async (
   client: IDeskproClient,
   id: string,
   data: ICreateCall
-): Promise<ProxyResponse> => {
+): Promise<Response> => {
   return defaultRequest(client, `phonecalls(${id})`, "PATCH", data);
 };
 
 export const createCall = async (
   client: IDeskproClient,
   data: ICreateCall
-): Promise<ProxyResponse> => {
+): Promise<Response> => {
   return defaultRequest(client, `phonecalls`, "POST", data);
 };
 
@@ -428,14 +426,14 @@ export const editAppointment = async (
   client: IDeskproClient,
   id: string,
   data: ICreateAppointment
-): Promise<ProxyResponse> => {
+): Promise<Response> => {
   return defaultRequest(client, `appointments(${id})`, "PATCH", data);
 };
 
 export const createAppointment = async (
   client: IDeskproClient,
   data: ICreateAppointment
-): Promise<ProxyResponse> => {
+): Promise<Response> => {
   return defaultRequest(client, `appointments`, "POST", data);
 };
 
@@ -465,7 +463,7 @@ export const getAppointmentsByContactId = (
     "GET"
   );
 
-const isResponseError = (response: ProxyResponse) =>
+const isResponseError = (response: Response) =>
   response.status < 200 || response.status >= 400;
 
 const defaultRequest = async (
@@ -476,7 +474,7 @@ const defaultRequest = async (
 ) => {
   const fetch = await proxyFetch(client);
 
-  const options: V2ProxyRequestInit = {
+  const options: RequestInit = {
     method,
     headers: {
       "Content-Type": "application/json",
@@ -493,7 +491,7 @@ const defaultRequest = async (
   let response = await fetch(url, options);
 
   if ([400, 401, 203, 500, 403].includes(response.status)) {
-    const refreshRequestOptions: V2ProxyRequestInit = {
+    const refreshRequestOptions: RequestInit = {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
