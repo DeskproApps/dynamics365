@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import {
-  ProxyResponse,
   useDeskproAppEvents,
   useDeskproLatestAppContext,
   useInitialisedDeskproAppClient,
@@ -76,12 +75,20 @@ type Props = {
     | "PhoneCall";
 };
 
+type Data = {
+  user: {
+    firstsName: string;
+    lastName: string;
+    primaryEmail: string;
+  };
+};
+
 export const MutateObject = ({ objectId, objectName }: Props) => {
   const navigate = useNavigate();
   const [linkedContact, setLinkedContact] = useState<string | undefined>();
   const [schema, setSchema] = useState<ZodTypeAny | null>(null);
   const { linkContact, getLinkedContact } = useLinkContact();
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<Data, unknown>();
 
   const correctJson = useMemo<IJson>(() => {
     switch (objectName) {
@@ -274,9 +281,9 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
       return;
 
     reset({
-      firstname: context.data.user.firstsName,
-      lastname: context.data.user.lastName,
-      emailaddress1: context.data.user.primaryEmail,
+      firstname: context.data?.user.firstsName,
+      lastname: context.data?.user.lastName,
+      emailaddress1: context.data?.user.primaryEmail,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isEditMode, objectName, context]);
@@ -288,9 +295,8 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
       navigate(-1);
     }
 
-    const id = (submitMutation.data as ProxyResponse).headers.location[0].match(
-      /\((.*)\)/
-    )?.[1];
+    const locationHeader = (submitMutation.data as Response).headers.get('location');
+    const id = locationHeader?.match(/\((.*)\)/)?.[1];
 
     if (objectName !== "Contact") {
       navigate(`/view/single/${objectName}/${id}`);

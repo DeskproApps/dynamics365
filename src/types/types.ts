@@ -14,3 +14,7 @@ export type FieldMappingInputs = {
   multiple?: boolean;
   settings_str?: string;
 }[];
+
+export type Settings = {
+  client_url: string;
+};

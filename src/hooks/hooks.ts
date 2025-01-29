@@ -6,21 +6,25 @@ import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { query } from "../utils/query";
 
+type Data = {
+  user: {
+    id: string;
+  };
+};
+
 export const useLinkContact = () => {
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<Data, unknown>();
   const { client } = useDeskproAppClient();
   const [isLinking, setIsLinking] = useState(false);
   const navigate = useNavigate();
 
-  const deskproUser = context?.data.user;
+  const deskproUser = context?.data?.user;
 
   const linkContact = useCallback(
     async (contactId: string) => {
-      if (!context || !contactId || !client) return;
+      if (!context || !contactId || !client || !deskproUser) return;
 
       setIsLinking(true);
-
-      const deskproUser = context?.data.user;
 
       const getEntityAssociationData = (await client
         ?.getEntityAssociation("dynamicsContacts", deskproUser.id)
@@ -57,7 +61,7 @@ export const useLinkContact = () => {
   }, [client, deskproUser]);
 
   const unlinkContact = useCallback(async () => {
-    if (!context || !client) return;
+    if (!context || !client || !deskproUser) return;
 
     const id = (await getLinkedContact())?.[0];
 

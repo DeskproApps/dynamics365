@@ -27,9 +27,15 @@ import leadJson from "../mapping/lead.json";
 import opportunityJson from "../mapping/opportunity.json";
 import taskJson from "../mapping/task.json";
 
+type Data = {
+  user: {
+    primaryEmail: string;
+  };
+};
+
 export const Main = () => {
   const navigate = useNavigate();
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<Data, unknown>();
   const [contactId, setContactId] = useState<string | null | undefined>(
     undefined
   );
@@ -113,11 +119,11 @@ export const Main = () => {
   const contactQuery = useQueryWithClient(
     ["contact", contactId as string],
     (client) =>
-      contactId === null
-        ? getContactsByEmail(client, context?.data.user.primaryEmail)
+      context?.data && contactId === null
+        ? getContactsByEmail(client, context.data.user.primaryEmail)
         : getContactsById(client, contactId as string),
     {
-      enabled: contactId !== undefined && !!context?.data.user.primaryEmail,
+      enabled: contactId !== undefined && !!context?.data?.user.primaryEmail,
       onError: () => unlinkContact().then(() => navigate("/findOrCreate")),
       onSuccess(data) {
         if (data?.value.length === 0) {

@@ -15,6 +15,7 @@ import { H1, H2, H3, Icon, P11, P14, P5, Stack } from "@deskpro/deskpro-ui";
 import { deleteRegexGroups, substitutePlaceholders } from "../../utils/utils";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, Link as RouterLink } from "react-router-dom";
+import { Settings } from "../../types/types";
 
 const SpaceBetweenFields = ({
   field: field,
@@ -66,7 +67,7 @@ export const FieldMapping = ({
   const { theme } = useDeskproAppTheme();
   const { mapFieldValues } = useMapFieldValues();
   const navigate = useNavigate();
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<unknown, Settings>();
 
   const clientUrl = useMemo(() => {
     if (!context?.settings?.client_url) return "";
