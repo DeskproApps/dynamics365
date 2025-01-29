@@ -2,7 +2,7 @@
   "name": "@deskpro-apps/dynamics365",
   "title": "Dynamics365",
   "description": " Elevate your customer interactions, marketing and overall business efficiency with Dynamics365.",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
