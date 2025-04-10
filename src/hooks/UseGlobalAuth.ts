@@ -69,7 +69,7 @@ export const useGlobalAuth = () => {
       }&scope=openid ${
         deleteRegexGroups(
           settings?.client_url ?? "",
-          /https:\/\/.*?(\.api)\.crm[0-9]+\.dynamics.com\/(.*)/
+          /^https:\/\/.*?(\.api)\.crm[0-9]+\.dynamics.com\/(.*)$/
         ) + "/user_impersonation"
       } offline_access&response_type=code&state=${key}`
     );

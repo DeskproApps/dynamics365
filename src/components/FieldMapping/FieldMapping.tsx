@@ -74,7 +74,7 @@ export const FieldMapping = ({
 
     return deleteRegexGroups(
       context?.settings?.client_url,
-      /https:\/\/.*?(\.api)\.crm[0-9]+\.dynamics.com\/(.*)/
+      /^https:\/\/.*?(\.api)\.crm[0-9]+\.dynamics.com\/(.*)$/
     );
   }, [context?.settings?.client_url]);
 
