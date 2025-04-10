@@ -30,7 +30,7 @@
       "type": "string",
       "isRequired": true,
       "isBackendOnly": false,
-      "validationPattern": "https?:\\/\\/.+\\/..+"
+      "validationPattern": "https?:\\/\\/[^\\s]+"
     },
     "global_access_token": {
       "title": "",
