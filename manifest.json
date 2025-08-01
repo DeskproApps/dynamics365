@@ -51,7 +51,7 @@
   "proxy": {
     "whitelist": [
       {
-        "url": "__client_url__.*",
+        "url": "^https?:\\/\\/[a-zA-Z0-9-]+\\.api\\.crm[0-9]+\\.dynamics\\.com\\/api\\/data\\/v[0-9\\.]+\\/.*$",
         "methods": ["GET", "POST", "PATCH", "PUT"],
         "timeout": 30
       },
